@@ -7,14 +7,18 @@
   <title>Maulana Sarowis</title>
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="scrollbar.css" />
   <script src="https://kit.fontawesome.com/bc6898d6b0.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link href="/preloader/preloader.css" rel="stylesheet">
 </head>
 
 <body>
+  <div id="progressbar"></div>
+  <div id="scrollPath"></div>
   <!-- <div id="particles-js" style="background-color: #27272e;"></div> -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
@@ -35,6 +39,7 @@
   </nav>
 
   <!-- Header Section -->
+
   <section class="header">
     <div class="container">
       <div class="row">
@@ -44,7 +49,7 @@
           <p>
             I'm a frontend developer.<br />I learn React and design<br />User Interface.
           </p>
-          <!-- Email Me -->
+          <!-- Contact Me -->
           <a class="btn btn-outline-light pt-3 pb-3 pl-4 pr-4" id="btn-email-me"
             href="https://api.whatsapp.com/send?phone=+6282284110206" target="_blank">Contact Me</a>
           <!-- Social Media -->
@@ -81,22 +86,28 @@
           </div>
         </div>
         <div class="row" id="skill-badge">
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/figma.png" alt="figma" title="Figma" />
           </div>
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/photoshop.png" alt="ps" title="Adobe Photoshop" />
           </div>
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/javascript.png" alt="javascript" title="JavaScript" />
           </div>
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/python.png" alt="python" title="Python" />
           </div>
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/react.png" alt="css" title="react" />
           </div>
-          <div class="col-md d-flex justify-content-center mt-2 mb-1">
+          <div class="col-md d-flex justify-content-center mt-2 mb-1" data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <img src="assets/vscode.png" alt="css" title="Visual Studio Code" />
           </div>
         </div>
@@ -109,8 +120,8 @@
     <div class="container">
       <div class="card" id="card-illustration">
         <div class="col">
-          <div class="col d-flex justify-content-center mb-3 mt-3">
-            <img src="assets/success project.png" width="25%" alt="" />
+          <div class="col d-flex justify-content-center mb-3 mt-3" data-aos="zoom-in-up">
+            <img src="assets/success project.png" width="30%" alt="" />
           </div>
           <div class="col d-flex justify-content-center">
             <h5 class="mb-3">Projects &amp; Portfolio</h5>
@@ -171,10 +182,6 @@
           <div class="col-lg-4 mt-3" align="center">
             <img class="project-preview" src="assets/project/project-11.jpg" width="100%" alt="PustakaQ App" />
             <div class="row mt-3 mb-3">
-              <div class="col">
-                <a class="view-code" href="https://github.com/maulanasarowis" target="_blank"><i
-                    class="fab fa-github"></i> View Code</a>
-              </div>
             </div>
           </div>
           <div class="col-lg-4 mt-3" align="center">
@@ -192,6 +199,9 @@
               <div class="col">
                 <a class="view-code" href="https://github.com/maulanasarowis/company-web" target="_blank"><i
                     class="fab fa-github"></i> View Code</a>
+                <a> | </a>
+                <a class="view-code" href="https://maulanasarowis.github.io/company-web/" target="_blank"><i
+                    class="fa fa-eye"></i> Demo</a>
               </div>
             </div>
           </div>
@@ -213,6 +223,9 @@
               <div class="col">
                 <a class="view-code" href="https://github.com/maulanasarowis/simple-landing-page" target="_blank"><i
                     class="fab fa-github"></i> View Code</a>
+                <a> | </a>
+                <a class="view-code" href="https://maulanasarowis.github.io/simple-landing-page/" target="_blank"><i
+                    class="fa fa-eye"></i> Demo</a>
               </div>
             </div>
           </div>
@@ -258,19 +271,11 @@
           <div class="col-lg-4 mt-3" align="center">
             <img class="project-preview" src="assets/project/project-2.jpg" width="100%" alt="Website Statis" />
             <div class="row mt-3 mb-3">
-              <div class="col">
-                <a class="view-code" href="https://github.com/maulanasarowis/edoltuku" target="_blank"><i
-                    class="fab fa-github"></i> View Code</a>
-              </div>
             </div>
           </div>
           <div class="col-lg-4 mt-3" align="center">
             <img class="project-preview" src="assets/project/project-1.jpg" width="100%" alt="Kalkulator" />
             <div class="row mt-3 mb-3">
-              <div class="col">
-                <a class="view-code" href="https://github.com/maulanasarowis" target="_blank"><i
-                    class="fab fa-github"></i> View Code</a>
-              </div>
             </div>
           </div>
         </div>
@@ -396,8 +401,23 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="/preloader/preloader.js"></script>
   <!-- <script src="particles.js"></script> -->
+
+  <script type="text/javascript">
+    // Animation
+    AOS.init();
+
+    let progress = document.getElementById('progressbar');
+    let totalHeight = document.body.scrollHeight;
+    window.innerHeight;
+    window.onscroll = function () {
+      let progressHeight = (window.pageYOffset / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+  </script>
 
 </body>
 
