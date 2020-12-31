@@ -6,20 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maulana Sarowis</title>
   <link rel="icon" type="image/png" href="/logo.png" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="scrollbar.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <link rel="stylesheet" href="css/preloader.css">
   <script src="https://kit.fontawesome.com/bc6898d6b0.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link href="/preloader/preloader.css" rel="stylesheet">
 </head>
 
 <body>
+  <div class="preloader">
+    <div class="loading">
+      <img src="/assets/spin.gif">
+    </div>
+  </div>
   <div id="progressbar"></div>
   <div id="scrollPath"></div>
-  <!-- <div id="particles-js" style="background-color: #27272e;"></div> -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
       <a id="web-title" class="navbar-brand" href="/"><img src="/logo.png" height="45" width="45"> maulana s.</a>
@@ -31,15 +35,12 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-link ml-3" id="menu" href="#project">Project</a>
           <a class="nav-link ml-3" id="menu" href="#certificates">Certificates</a>
-          <!-- <a class="nav-link ml-3" id="menu" href="#design">Design</a> -->
-          <!-- <a class="nav-link ml-3" id="menu" href="" target="_blank">Blog</a> -->
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Header Section -->
-
   <section class="header">
     <div class="container">
       <div class="row">
@@ -308,6 +309,8 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5" class=""></li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item">
@@ -362,6 +365,30 @@
                 </div>
               </div>
             </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img id="certificate-image" src="assets/certificates/5.complete-pwa.jpg" class="d-block" alt="..." />
+                </div>
+                <div class="col-lg-6 align-self-center">
+                  <h3 class="mt-2">Complete Progressive Web App Bootcamp</h3>
+                  <p class="company">Udemy</p>
+                  <p class="level">Beginner</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img id="certificate-image" src="assets/certificates/6.html5.jpg" class="d-block" alt="..." />
+                </div>
+                <div class="col-lg-6 align-self-center">
+                  <h3 class="mt-2">The Complete HTML5 Course: From Beginning to Expert</h3>
+                  <p class="company">Udemy</p>
+                  <p class="level">Beginner</p>
+                </div>
+              </div>
+            </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="sr-only">Previous</span>
@@ -398,13 +425,13 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <!-- Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="/preloader/preloader.js"></script>
-  <!-- <script src="particles.js"></script> -->
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 
   <script type="text/javascript">
-    // Animation
+    // Animation On Scroll
     AOS.init();
 
+    // Costum Scroll Progressbar
     let progress = document.getElementById('progressbar');
     let totalHeight = document.body.scrollHeight;
     window.innerHeight;
@@ -412,6 +439,11 @@
       let progressHeight = (window.pageYOffset / totalHeight) * 100;
       progress.style.height = progressHeight + "%";
     }
+
+    // Preloader
+    $(document).ready(function () {
+      $(".preloader").fadeOut(3000);
+    });
   </script>
 
 </body>
